@@ -107,8 +107,8 @@ def name(s):
     """
     Returns the translated name as a formatted string in the form of a verse.
 
-    # REGULAR VERSE: No vowels, or 'B', 'F' or 'M' in pos 1: Strip all chars up to
-    # first vowel.
+    REGULAR VERSE: No vowels, or 'B', 'F' or 'M' in pos 1: Strip all chars up to
+    first vowel.
 
     Example: name('Scott') returns:
         Scott!
@@ -117,7 +117,7 @@ def name(s):
         Fi-Fi mo-mott
         Scott!
         
-    # EXCEPTION 1: A, E, I, O, U in pos1 - Do not strip anything.
+    EXCEPTION 1: A, E, I, O, U in pos1 - Do not strip anything.
 
     Example: name('Evan') returns:
         Evan!
@@ -126,8 +126,8 @@ def name(s):
         Fi-Fi mo-mevan
         Evan!
 
-    # EXCEPTION 2: 'B', 'F' or 'M' in pos 1: Same as Case 1, PLUS also subtract
-    # prefix char in the matching "bo-(b), fo-(f), mo-(m)" verse line.
+    EXCEPTION 2: 'B', 'F' or 'M' in pos 1: Same as Case 1, PLUS also subtract
+    prefix char in the matching "bo-(b), fo-(f), mo-(m)" verse line.
 
     Example: name('Fred') returns:
         Fred!
