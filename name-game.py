@@ -107,26 +107,7 @@ def name(s):
     """
     Returns the translated name as a formatted string in the form of a verse.
 
-    # CASE 1: A, E, I, O, U in pos1 - Do not strip anything.
-
-    Example: name('Evan') returns:
-        Evan!
-        Evan, Evan, bo-bevan
-        Banana-fana fo-fevan
-        Fi-Fi mo-mevan
-        Evan!
-
-    # CASE 2: 'B', 'F' or 'M' in pos 1: Same as Case 1, PLUS also subtract
-    # prefix char in the matching "bo-(b), fo-(f), mo-(m)" verse line.
-
-    Example: name('Fred') returns:
-        Fred!
-        Fred, Fred, bo-bed
-        Banana-fana fo-ed
-        Fi-Fi mo-med
-        Fred!
-
-    # CASE 3: No vowels, or 'B', 'F' or 'M' in pos 1: Strip all chars up to
+    # REGULAR VERSE: No vowels, or 'B', 'F' or 'M' in pos 1: Strip all chars up to
     # first vowel.
 
     Example: name('Scott') returns:
@@ -135,6 +116,25 @@ def name(s):
         Banana-fana fo-fott
         Fi-Fi mo-mott
         Scott!
+        
+    # EXCEPTION 1: A, E, I, O, U in pos1 - Do not strip anything.
+
+    Example: name('Evan') returns:
+        Evan!
+        Evan, Evan, bo-bevan
+        Banana-fana fo-fevan
+        Fi-Fi mo-mevan
+        Evan!
+
+    # EXCEPTION 2: 'B', 'F' or 'M' in pos 1: Same as Case 1, PLUS also subtract
+    # prefix char in the matching "bo-(b), fo-(f), mo-(m)" verse line.
+
+    Example: name('Fred') returns:
+        Fred!
+        Fred, Fred, bo-bed
+        Banana-fana fo-ed
+        Fi-Fi mo-med
+        Fred!
 
     Parameter s: the string (name) to translate
     Precondition: s is a string.
@@ -145,13 +145,13 @@ def name(s):
     f = ''
     m = ''
 
-    # CASE 1
+    # EXCEPTION 1
     if s[0] == 'A' or s[0] == 'E' or s[0] == 'I' or s[0] == 'O' or s[0] == 'U':
         case = 1
         b, f, m = 'b', 'f', 'm'
         bananarama = s.lower()
 
-    # CASE 2
+    # EXCEPTION 2
     elif s[0] == 'B' or s[0] == 'F' or s[0] == 'M':
         case = 2
         if s[0] == 'B':
@@ -162,7 +162,7 @@ def name(s):
             b, f, m = 'b', 'f', ''
         bananarama = s.lower()[first_vowel(s):]
 
-    # CASE 3
+    # REGULAR VERSE
     else:
         case = 3
         b, f, m = 'b', 'f', 'm'
