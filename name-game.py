@@ -7,9 +7,8 @@ https://en.wikipedia.org/wiki/The_Name_Game
 Unless your name string begins with either a vowel (A, E, I, O, U), OR begins
 with the letters 'B', 'F' or 'M', the 'regular verse' rules will apply.
 
-REGULAR VERSE:
-Begin by dropping all leading consonants. At the end of every line, the name
-then gets repeated without the first letter.
+REGULAR VERSE: Begin by dropping all leading consonants. At the end of every 
+line, the name then gets repeated without the first letter.
 
     Example: The verse for the name 'Gary' would be:
         Gary!
@@ -110,31 +109,31 @@ def name(s):
     REGULAR VERSE: No vowels, or 'B', 'F' or 'M' in pos 1: Strip all chars up to
     first vowel.
 
-    Example: name('Scott') returns:
-        Scott!
-        Scott, Scott, bo-bott
-        Banana-fana fo-fott
-        Fi-Fi mo-mott
-        Scott!
+        Example: name('Scott') returns:
+            Scott!
+            Scott, Scott, bo-bott
+            Banana-fana fo-fott
+            Fi-Fi mo-mott
+            Scott!
         
     EXCEPTION 1: A, E, I, O, U in pos1 - Do not strip anything.
 
-    Example: name('Evan') returns:
-        Evan!
-        Evan, Evan, bo-bevan
-        Banana-fana fo-fevan
-        Fi-Fi mo-mevan
-        Evan!
+        Example: name('Evan') returns:
+            Evan!
+            Evan, Evan, bo-bevan
+            Banana-fana fo-fevan
+            Fi-Fi mo-mevan
+            Evan!
 
     EXCEPTION 2: 'B', 'F' or 'M' in pos 1: Same as Case 1, PLUS also subtract
     prefix char in the matching "bo-(b), fo-(f), mo-(m)" verse line.
 
-    Example: name('Fred') returns:
-        Fred!
-        Fred, Fred, bo-bed
-        Banana-fana fo-ed
-        Fi-Fi mo-med
-        Fred!
+        Example: name('Fred') returns:
+            Fred!
+            Fred, Fred, bo-bed
+            Banana-fana fo-ed
+            Fi-Fi mo-med
+            Fred!
 
     Parameter s: the string (name) to translate
     Precondition: s is a string.
