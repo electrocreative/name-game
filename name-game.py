@@ -5,7 +5,7 @@ Rules based on the lyrics from the 1964 song "The Name Game" by Shirley Ellis.
 https://en.wikipedia.org/wiki/The_Name_Game
 
 Unless your name string begins with either a vowel (A, E, I, O, U), OR begins
-with the letters 'B', 'F' or 'M', you don't have to care about special rules.
+with the letters 'B', 'F' or 'M', the 'regular verse' rules will apply.
 
 REGULAR VERSE:
 Begin by dropping all leading consonants. At the end of every line, the name
@@ -22,7 +22,7 @@ EXCEPTION 1: Vowel is first letter of the name:
 If you have a vowel ('A', 'E', 'I', 'O', or 'U') as the first letter of your
 name (e.g. 'Earl') you do not truncate the name.
     - NOTE: 'Y' in the first position is NOT considered a vowel.
-    - NOTE: 'Y' in the second position is considered a vowel so it remains.
+    - NOTE: 'Y' in the second position IS considered a vowel, so it remains.
 
     Example: The verse for the name 'Earl' would be:
         Earl!
